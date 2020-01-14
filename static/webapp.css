@@ -1,0 +1,184 @@
+:root {
+	--main-bg: 			#2c3e50;
+	
+	--table-cell-bg:	#808080;
+	--table-head-bg:	#fcae3d;
+	--table-foot-bg:	#fcae3d;
+	
+	--select-bg:		#2c3e50;
+	--select-after:		#2c3e50;
+	
+	--h1-color:			#ffffff;
+	
+	--button-bg:		#2c3e50;
+	--button-color:		#ffffff;
+	
+	--url-disp-bg:		#2c3e50;
+	--url-disp-color:	#ffffff;
+
+	--font-sz-body:		20px;
+	--font-sz-h1:		30px;
+	--font-family:		"Arial";
+}
+
+body {
+	background-color: var(--main-bg);
+	font-family: var(--font-family);
+	font-style: normal;
+	font-size: var(--font-sz-body);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+h1 {
+
+	font-family: var(--font-family);
+	font-size: var(--font-sz-h1);
+	color: var(--h1-color);
+	font-weight: bold;
+	
+}
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-color: var(--select-bg);
+  width: 6em;
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: var(--font-sz-body);
+  
+
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 4em;
+  line-height: 3;
+  background-color: var(--select-bg);
+  overflow: hidden;
+  border-radius: .25em;
+  text-align-last:center;
+  padding: 3px 10px;
+}
+
+
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: var(--select-bg);
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+.button {
+
+  border-radius: 25px;
+  background: var(--button-bg);
+  padding: 15px;
+  width: 5em;
+  height: 0.5em;
+  line-height: 0.5em;
+  text-align: center;
+  vertical-align: center;
+  color: var(--button-color);
+
+}
+
+.rTable {
+  	display: table;
+  	width: 60%;
+  	border: 0;
+}
+.rTableRow {
+  	display: table-row;
+  	width=60%;
+  	
+}
+
+.rTableHeading {
+  	display: table-header-group;
+  	background-color: var(--table-head-bg);
+  	width: 100%;
+  	padding: 3px 10px;
+  	font-weight: bold;
+}
+
+.rTableCell {
+  	display: table-cell;
+  	padding: 3px 10px;
+  	border: 0px;
+  	background-color: var(--table-cell-bg);
+  	text-align: center;
+  	vertical-align: center;
+  	align: center;
+  	
+}
+
+.rTableHead {
+  	display: table-cell;
+  	padding: 3px 10px;
+  	border: 0px;
+  	background-color: var(--table-head-bg);
+  	text-align: center;
+  	vertical-align: center;
+}
+
+
+.rTableBody {
+  	display: table-row-group;
+}
+
+
+.urlDisplay {
+
+	background-color: var(--main-bg);
+  	width: 40%;
+  	text-align: center;
+  	border-color: var(--table-head-bg);
+}
+
+input[type=text] {
+
+    width: 100%;
+    margin: 10px 5px;
+    padding: 15px 22px;
+    text-align: center;
+    font-family: var(--font-family);
+	font-style: normal;
+	font-size: var(--font-sz-body);
+	background: var(--url-disp-bg);
+	color: var(--url-disp-color);
+
+}
+

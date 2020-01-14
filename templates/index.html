@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Generator</title>
+
+    <link rel="stylesheet" href="/static/webapp.css">
+    <script src="/static/utils.js"></script>
+</head>
+<body>
+
+        <img src='/static/logo.png' width="602px" height="162px" align="center">
+
+            <div class="rTable">
+                <div class="rTableHeading">
+        	        <div class="rTableHead">
+			            Document
+			        </div>
+			        <div class="rTableHead">
+			            Compression
+			        </div>
+			        <div class="rTableHead">
+			            Download File
+			        </div>
+			        <div class="rTableHead">
+			            Email File
+			        </div>
+    	        </div>
+
+                <div class="rTableRow" border-radius='15px 15px'>
+
+                    <div class="rTableCell">
+
+                        <select id="select_doctype" onchange="if (this.selectedIndex) rebuild_url();">
+                            <option value="none" selected="selected">none</option>
+                            {% for doctype in doctype_list %}
+
+                            <option value="{{ doctype }}">{{ doctype }}</option>
+
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="rTableCell">
+
+                        <select id="select_compress" onchange="if (this.selectedIndex) rebuild_url();">
+                            <option value="none" selected="selected">none</option>
+                            {% for comptype in comptype_list %}
+
+                            <option value="{{ comptype }}">{{ comptype }}</option>
+
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="rTableCell">
+                        <a id="dl_link" onclick="download_url()">
+                            <center><div class=button>download</div></center>
+                        </a>
+                    </div>
+
+                    <div class="rTableCell">
+                        <a id="email_it" onclick="send_email()">
+                            <center><div class=button>send</div></center>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+    <div class=urlDisplay>
+
+	    <input type="text" id="urlstore" readonly width=400px>
+
+    </div>
+
+
+    <script>rebuild_url()</script>
+
+</body>
+</html>
