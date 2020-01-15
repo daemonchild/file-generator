@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "file-generator",
+    "version": "v0.0.0"
+  },
+  "host": "localhost:9000",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/",
+  "paths": {
+    "/list": {
+      "get": {
+        "summary": "List (Base)",
+        "description": "Base request, 400 response expected",
+        "operationId": "fd4eeeda-5251-49f7-8820-09f5ddef3b04",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/list/documents": {
+      "get": {
+        "summary": "List Document Filetypes",
+        "description": "List available filetypes for base 'document'",
+        "operationId": "96d188ca-4827-4ef2-809f-69b7d793d876",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/list/compress": {
+      "get": {
+        "summary": "List Compress Filetypes",
+        "description": "List available filetypes for compression",
+        "operationId": "b3d44887-cbe2-4973-aae0-47e0ad07c190",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/fetch": {
+      "get": {
+        "summary": "Fetch (Base)",
+        "description": "Base request, 400 response expected",
+        "operationId": "9524aeb8-4bb7-4073-bb4b-09fc1fa2b6e3",
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/fetch/[filetype]": {
+      "get": {
+        "summary": "Fetch File",
+        "description": "Fetch file /fetch/[filetype]\nSupply compression filetype as URL variable\nSupply malware as true or false to create base document with 'EICAR' test file",
+        "operationId": "e85f9137-e7fa-4d64-9e3b-9887d0540a96",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "compress",
+            "required": true,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "false",
+            "name": "malware",
+            "required": true,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}

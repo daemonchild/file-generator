@@ -40,7 +40,7 @@ def root_page():
 @app.route('/list', methods=['GET'])
 def list_alltypes():
 
-    return (make_response(jsonify({'error': 'specify type'}), 200))
+    return (make_response(jsonify({'error': 'specify type'}), 400))
 
 
 @app.route('/list/documents', methods=['GET'])
@@ -81,7 +81,7 @@ def sanitise(u_string):
 @app.route('/fetch', methods=['GET'])
 def fetch():
 
-    return make_response(jsonify('error', 'try fetch/[document_type]'), 404)
+    return make_response(jsonify('error', 'try fetch/[document_type]'), 400)
 
 
 @app.route('/fetch/<string:u_doctype>', methods=['GET'])

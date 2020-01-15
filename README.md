@@ -16,7 +16,7 @@ docker build -t filegen:0.3 .
 And deploy, for example:
 
 <pre>
-docker run -p 9000:9000 --name api-filegen filegen:0.3
+docker run -d -p 9000:9000 --name api-filegen filegen:0.3
 </pre>
 
 
