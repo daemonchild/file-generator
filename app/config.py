@@ -1,3 +1,4 @@
+import os
 
 # Global Variables and functions
 
@@ -17,7 +18,13 @@ def respath():
 
 def filespath():
 
-    return (apppath() + "/files/")
+    fp = apppath() + "/files/"
+
+
+    if not os.path.exists(fp):
+        os.makedirs(fp)
+
+    return (fp)
 
 
 class mimetypes:

@@ -3,7 +3,26 @@ Creates files on the Fly, Flask API
 
 Allows the creation of files on demand for testing web proxies, or email policy.
 
-## Installation
+## Docker
+
+Deploying the API into a Docker container is simple.
+
+Build the Docker image:
+
+<pre>
+docker build -t filegen:0.3 .
+</pre>
+
+And deploy, for example:
+
+<pre>
+docker run -p 9000:9000 --name api-filegen filegen:0.3
+</pre>
+
+
+
+
+## Native Installation
 
 Clone this repository using:
 
@@ -28,16 +47,16 @@ Install the required python packages:
 $ pip install -r requirements.txt
 </pre>
 
-## Start the API
+Then start the API:
 
-Install the required python packages:
+
 <pre>
-$ python3 file-generator-api.py
+$ python3 app/file-generator-api.py
 </pre>
 
 NB: By default, the app runs on port 9000. This can be changed in config.py.
 
-# Web App
+## Web App
 
 The API includes a simple web app that generates a file and downloads it via the web browser. 
 
