@@ -13,3 +13,5 @@ for file in os.listdir(thispath):
 from modules.documents.doc_docx import doc_docx
 from modules.documents.doc_xlsx import doc_xlsx
 from modules.documents.doc_csv import doc_csv
+from modules.documents.doc_bat import doc_bat
+from modules.documents.doc_py import doc_py
